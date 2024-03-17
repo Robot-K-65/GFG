@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #result {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .button {
+            font-size: 14px;
+            padding: 8px 16px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="result"></div>
+
+<button class="button" onclick="selectExercises('Abs')">Abs</button>
+<button class="button" onclick="selectExercises('Shoulder')">Shoulder</button>
+<button class="button" onclick="selectExercises('Trap')">Trap</button>
+<button class="button" onclick="selectExercises('Back')">Back</button>
+<button class="button" onclick="selectExercises('Biceps')">Biceps</button>
+<button class="button" onclick="selectExercises('Leg')">Leg</button>
+<button class="button" onclick="selectExercises('Middle Chest')">Middle Chest</button>
+<button class="button" onclick="selectExercises('Incline Chest')">Incline Chest</button>
+<button class="button" onclick="selectExercises('Decline Chest')">Decline Chest</button>
+<button class="button" onclick="selectExercises('Triceps')">Triceps</button>
+
+<script>
+    var exercises = {
+        "Abs": ["Plank", "Weighted Russian Twists", "Dragon Flags", "Leg Raises", "Mountain Climbers", "Standing Side Crunches", "Burpees", "Flutter Kicks", "Crunches", "Bicycle Crunches", "Toes-to-Bar", "Side Plank", "Crunches", "Windshield Wipers", "Hollow Body Hold", "In and Out Crunches", "Cable Crunches", "Pulse Plank", "V-UPS", "Flutter Kick", "Reverse Crunches", "Oblique Crunches"],
+        "Shoulder": ["Military Press", "Lateral Raises", "Front Raises Dumbbell", "Plate Front Raises", "Arnold Dumbbell Press", "Barbell Front Raise", "Seated Alternating Dumbbell Press", "Face Pulls", "Machine Shoulder leg Press", "Upright Ez bar Row", "Behind the neck overhead press in standing", "Behind the neck overhead press in seated", "Reverse Machine Press", "Seated Dumbbell Press", "Dumbbell Rear Delt Flyes", "Rear Delt Machine Flyes", "Straight Arm Cable Pull Down", "Seated Barbel Shoulder Press", "Seated Dumbbell one-arm shoulder press", "Smith Machine kneeling Overhead Barbell Press"],
+        "Trap": ["Shrugs", "Upright Rows", "Front Barbell Shrugs", "Back Barbell Shrugs"],
+        "Back": ["Deadlifts", "Bent over rows", "Lat Pull downs", "Face Pulls"],
+        "Biceps": ["Standing EZ bar Curl", "21s", "Spider curls", "Isometric Holds"],
+        "Leg": ["Barbell Squats", "Goblet Squats", "Front Squats", "Walking Lunges", "Stationary Lunges", "Bulgarian Spilt Squats", "Leg Press", "Leg Extensions", "Leg Curls", "Glute Bridges With bodyweight", "Glute Bridges barbell", "Glute Bridges dumbbells", "Sumo Deadlifts", "Step-Ups", "Goog Mornings", "Vertial Leg Press", "Smith Machine Squats", "Hack Squat", "Conventional Deadlifts", "Romanian Deadlifts"],
+        "Middle Chest": ["Flat Bench Press", "Flat Dumbbell Flyes", "Cable Crossovers (Middle Chest Emphasis)"],
+        "Incline Chest": ["Incline Bench Press", "Incline Dumbbell Flyes", "Push-Ups (with your hands close together)", "Chest Dips"],
+        "Decline Chest": ["Decline Bench Press", "Decline Dumbbell Flyes", "Decline Push-Ups", "Chest Dips"],
+        "Triceps": ["Skull Crushers", "Incline Crushers", "Decline Skull Crusher", "Rope Tricep Pushdown", "Underhand Cable Pushdown", "Bench Dip", "Elbow Extension", "Seated Tricep Kickback Dumbbell", "Seated Single hand Tricep Kickback Dumbbell", "Close Grip Bench Press", "Cable Rope Triceps Pushdown", "Barbell Lying Triceps Extension", "Dumbbell Lying Triceps Extension", "One Arm Lying Triceps Extension", "Lying cross body dumbbell", "One-Arm Overhead Extension", "Seated EZ-Bar Overhead Triceps Extension", "Standing Overhead Cable Triceps Extension", "Straight Arm Cable Pull Down"]
+    };
+
+    function selectExercises(category) {
+        var selectedExercises = exercises[category].slice().sort(() => Math.random() - 0.5).slice(0, 5);
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "<strong>" + category + " Exercises:</strong><br>" + selectedExercises.join("<br>");
+    }
+</script>
+
+</body>
+</html>

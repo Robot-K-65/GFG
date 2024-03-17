@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Neurons</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <script src="{% static 'js/QuestionAnswer.js' %}"></script>
+    <style>
+        #click-counter {
+            color: red;
+            float: right;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 100px; 
+            font-style: italic;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">BrainNeurons</h2>
+        </div>
+    </div>
+    <div class="main">
+        <div class="question-box">
+            <p><span id="question-text">Question</span></p>
+        </div>
+
+        <div class="answer-box">
+            <textarea id="user-answer" placeholder="Type your answer here" rows="5"></textarea>
+            <button class="button" id="btn-next-question">Random Question</button>
+            <button class="button" id="btn-check-answer">Check Answer</button>
+            <button class="button" id="btn-show-answer">Show Answer</button>
+            <p>Correct Answer: <span id="correct-answer-text"></span></p>
+            <p class="correct-answer-text">Correct Answer: <span id="correct-answer-text"></span></p>
+            <p>Number of Clicks: <span id="click-counter">0</span></p>
+        </div>
+
+        <div class="image-box">
+            <img id="question-image" src="" alt="Question Image" width="300" height="400">
+        </div>
+
+        <select id="data-option">
+        </select>
+    </div>
+
+    <script>
+        let clickCount = 0;
+
+        document.getElementById('btn-next-question').addEventListener('click', () => {
+            clickCount++;
+            document.getElementById('click-counter').textContent = clickCount.toString();
+            fetchRandomQuestionWithLabel();
+        });
+
+        document.getElementById('btn-check-answer').addEventListener('click', checkAnswer);
+        document.getElementById('btn-show-answer').addEventListener('click', showAnswer);
+
+        fetchLabels();
+    </script>
+</body>
+</html>
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

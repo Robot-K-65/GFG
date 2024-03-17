@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Neurons</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <script src="{% static 'js/createFolder.js' %}"></script>
+    <script src="{% static 'js/viewLabels.js' %}"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">BrainNeurons</h2>
+        </div>
+
+        <div class="note-form">
+            <form>
+                <textarea id="note-input" class="note-input" placeholder="Label Name" maxlength="50"></textarea>
+                <div id="label-container"></div>
+                
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="main">
+        <div class="scrollable">
+            <div id="wall"></div>
+            <div id="data-container"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

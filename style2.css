@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+.label {
+    margin: 200px auto;
+    padding: 250px;
+    background-color: rgba(0, 128, 0, 0.497);
+    border: 10px solid rgb(255, 0, 0);
+    font-size: 14px;
+    max-width: 900px;
+    word-wrap: break-word;
+    text-align: center;
+    position: relative; /* Added */
+    z-index: 2; /* Added */
+    border-radius: 100px;
+    color: red;
+}
+
+.fixed {
+    position: fixed;
+    z-index: 2; /* Added */
+}
+
+.scrollable {
+    overflow-y: scroll;
+    height: calc(100vh - 0px);
+    z-index: 2; /* Added */
+}
+
+.main {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url('../img/background1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    position: fixed; /* Modified */
+    z-index: 1; /* Modified */
+}
+
+.navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+    position: fixed; /* Modified */
+    z-index: 2; /* Modified */
+}
+
+.icon {
+    width: 200px;
+    float: none;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #ff7200;
+    font-size: 35px;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    padding-left: 130px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px;
+    position: fixed; /* Added */
+    z-index: 2; /* Added */
+}
+
+.note-form {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative; /* Added */
+    z-index: 2; /* Added */
+
+}
+
+.note-input {
+    width: 200%;
+    padding: 2px;
+    border: 5px solid #ff7200;
+    border-radius: 50px;
+    resize: none;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    height: 25px;
+    position: relative; /* Added */
+    z-index: 2; /* Added */
+}
+
+.note-input::placeholder {
+    text-align: center;
+    line-height: inherit;
+    vertical-align: middle;
+}
+
+
+/* Styles for the label name */
+.label h3 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    display: inline-block; /* or inline */
+    vertical-align: top;
+}
+
+
+/* Styles for the question and answer input boxes */
+.label .question-input,
+.label .answer-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+   
+}
+
+
+
+/* Styles for the entry button */
+.label button {
+    padding: 8px 80px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    border-radius: 50px;
+    margin-top: 30px;
+}
+
+.label button:hover {
+    background-color: #45a049;
+}
+
+
+  

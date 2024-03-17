@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Data</title>
+    {% load static %}
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        em {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            <form action="/updateData/{{label.id}}" method="POST" autocomplete="off" class="form-horizontal">
+                {% csrf_token %}
+                <h3 class="page-header text-primary text-center">Edit Data</h3>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value="{{ label.name }}" name="name" placeholder="Enter your name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="question" class="col-sm-2 control-label">Question</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="question" placeholder="Ask your question" rows="4">{{ label.question }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="answer" class="col-sm-2 control-label">Answer</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="answer" placeholder="Enter the answer" rows="4">{{ label.answer }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="image" class="col-sm-2 control-label">Image</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Update" class="btn btn-primary btn-block">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

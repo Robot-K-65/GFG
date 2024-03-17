@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Neurons</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <style>
+        /* Add CSS styles here */
+        #countdown {
+            color: orange;
+            font-size: 100px;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Define your birthday in MM/DD/YYYY format
+            const birthday = new Date('05/07/2024');
+            const today = new Date();
+            const daysUntilBirthday = Math.ceil((birthday - today) / (1000 * 60 * 60 * 24));
+
+            // Display the number of days until your birthday on the page
+            const countdownElement = document.getElementById('countdown');
+            if (countdownElement) {
+                countdownElement.textContent = `Balance days: ${daysUntilBirthday}`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">BrainNeurons</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE <i class="users"></i></a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="/createfolder/">Create Questions</a></li>
+                                <li><a href="/randomquestion/">Practice</a></li>
+                                <li><a href="/get_all_data/">Data</a></li>
+                                <li><a href="/Maths/">Maths<a><li>
+                                <li><a href="/Workout/">Workout<a><li>
+                                <li><a href="/memorization/">Memorization<a><li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Brain Neurons &amp; <br><span>Development</span> <br>Training</h1>
+            <p class="par">To find answers, life depends on asking questions. <br> Asking questions is the simplest and most effective way of learning. <br> - Richard Branson </p>
+        </div>
+        <div id="countdown" style="color: #ff7200;"></div>
+        {% if messages %}
+            <div class="popup">
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+

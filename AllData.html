@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+</head>
+<body>
+    <h1>All Data</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Image</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <!-- Assuming 'labels' is an array of objects with properties like 'id', 'name', 'question', 'answer', and 'image' -->
+        {% for label in labels %}
+        <tr>
+            <td>{{ label.id }}</td>
+            <td>{{ label.name }}</td>
+            <td>{{ label.question }}</td>
+            <td>{{ label.answer }}</td>
+            
+            <td>
+                {% if label.image %}
+                    <img src="{{ label.image }}" alt="{{ label.name }}" height="50">
+                {% else %}
+                    No Image
+                {% endif %}
+            </td>
+            <!-- Assuming there's a server-side endpoint to handle the update, e.g., '/updateData/{{label.id}}' -->
+            <td><a class="btn btn-success" href="/updateData/{{label.id}}">Update</a></td>
+            <td><a class="btn btn-danger" href="/deleteData/{{label.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

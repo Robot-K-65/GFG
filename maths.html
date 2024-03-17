@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Neurons</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style5.css'%}">
+    <script src="{% static 'js/maths.js' %}"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">BrainNeurons</h2>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <label for="question">Question:</label>
+            <textarea id="question" name="question" rows="4" color="50">Question</textarea>
+        </div>
+        
+        <div class="answer-box">
+            <label for="answer">Answer:</label>
+            <textarea id="answer" name="answer" rows="4" color="50"></textarea>
+        </div>
+
+        <div>
+            <button id="pauseBtn" onclick="pauseFunction()">Pause</button></div>
+            <button id="randomQuestionBtn" onclick="window.onload()">Random Question</button>
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+
